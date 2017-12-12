@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
+
+
+</head>
+<body>
+<div id="signinButton">
+          <span class="g-signin"
+            data-scope="openid email"
+            data-clientid="71420721369-9go42k1eji92kan60um0agnl4brukgpk.apps.googleusercontent.com"
+            data-redirecturi="postmessage"
+            data-accesstype="offline"
+            data-cookiepolicy="single_host_origin"
+            data-callback="signInCallback"
+            data-approvalprompt="force">
+          </span>
+        </div>
+        <div id="result"></div>
+        <script>
+        	function signInCallback(authResult){
+        		if(authResult['code']){
+        			$('#signinButton').attr('style', 'display:none');
+        			$.ajax({
+        				type: 'POST',
+        				url: '/gconnect?state={{STATE}}',
+        				processData: false,
+        				contentType: 'application/octet-stream; charset=utf-8',
+        				data: authResult['code'],
+        				success: function(result){
+        					if(result){
+        						$('#result').html('Login success</br>' + result +'<br> redirecting.....')
+        						setTimeout(function(){
+        							window.location.href ="/restaurants";
+        						}, 1000);
+        					} else if(authResult['error']){
+        						console.log('there was a error' + authResult['error']);
+        					} else {
+        						$('#result').html('Failed to make a server call');
+        					}
+        				}
+        			});//ajax 
+        		
+        		}//if authresult ending
+        	}//sign in call back closing
+        		
+
+
+        </script>
+</body>
+</html>
