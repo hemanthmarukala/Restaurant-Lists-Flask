@@ -227,7 +227,7 @@ def deleteMenuItem(restaurant_id, menu_id):
 
 #   71420721369-9go42k1eji92kan60um0agnl4brukgpk.apps.googleusercontent.com
 if __name__ == '__main__':
-	app.secret_key = 'Yh6iSItV8H8BDuOEyZ73ZLEL'
+	app.secret_key = 'Your secret Key'
 	app.debug = True
 	app.run(host = '0.0.0.0', port = 5000)
 	
