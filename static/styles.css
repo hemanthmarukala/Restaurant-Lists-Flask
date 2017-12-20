@@ -1,13 +1,13 @@
 body {
     font-family: sans-serif;
-    background-color: #333333
+    background-color: #cccccc;
 }
 
 h1,
 h2,
 h3,
 h4 {
-    color: #ffffff;
+    color: #000000;
 }
 
 h1,
@@ -17,34 +17,42 @@ h2 {
 }
 
 h1 {
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid #333;
 }
 
 h2 {
     font-size: 1.2em;
 }
 
+h3 {
+    font-size:2em;
+}
+
 p,
 dd,
 dt {
-    color: #cccccc;
+    color: #000;
 }
 
 a {
     text-decoration: none;
-    color: #ffffcc;
+    /*color: #ffffcc;*/
     font-size: .75em;
 }
 
+#logo {
+            padding:10px;
+        }
+        
+}
 .pane {
-    position: absolute;
-    left: 25%;
+    position: relative;
     border: 2px solid;
     border-radius: 25px;
     padding: 5px;
     margin: 5px;
     border-color: #999999;
-    background-color: #333333
+    background-color: #ffffff;
 }
 
 .header {
@@ -56,6 +64,7 @@ a {
     width: 50%;
     display: inline-block;
     float: left;
+    color: #000000
 }
 
 .description {}
@@ -64,6 +73,7 @@ a {
     text-align: right;
     width: 50%;
     float: right;
+    color: #000000
 }
 
 .editdeletepane {}
@@ -71,3 +81,25 @@ a {
 .flash {
     background: #cee5f5;
 }
+.divider.green {
+    /*background-color: #9FB80A;*/
+}
+
+.glyphicon {
+    margin-right: 10px;
+}
+
+.padding-top {
+    padding-top: 30px;
+}
+.padding-bottom {
+    padding-bottom: 30px;
+}
+.margin-right {
+    margin-right: 30px;
+}
+.padding-none {
+    padding: 0;
+}
+
+
